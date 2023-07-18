@@ -32,16 +32,16 @@ jobs:
         env:
           VAULT_URL: ${{ secrets.VAULT_ADDR }}
           VAULT_AUTH_PATH: jwt
-          VAULT_ROLE: github-actions-oidc
+          VAULT_ROLE: github-actions-role
 
       - name: Retrieve Secrets
         id: secretdata
         uses: hashicorp/vault-action@v2
         with:
           method: jwt
-          url: ${{ secrets.VAULT_ADDR }}
-          namespace: ${{ secrets.VAULT_NAMESPACE }}
-          role: github-actions-oidc
+          url: https://dev-infra-public-vault-d63fc407.a09799cb.z1.hashicorp.cloud:8200
+          namespace: admin
+          role: github-actions-role
 #          secrets: ${{ secrets.VAULT_SECRET_PATH }} ${{ secrets.VAULT_SECRET_KEY }} | MY_SECRET
           secrets: secrets/adp password | MY_SECRET
 
