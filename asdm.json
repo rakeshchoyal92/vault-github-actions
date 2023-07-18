@@ -1,0 +1,33 @@
+{
+  "request_id": "17654fe0-b01d-6f8b-003a-e292a4594dc0",
+  "lease_id": "",
+  "renewable": false,
+  "lease_duration": 0,
+  "data": null,
+  "wrap_info": null,
+  "warnings": [
+    "TTL of \"1h\" exceeded the effective max_ttl of \"1m40s\"; TTL value is capped accordingly"
+  ],
+  "auth": {
+    "client_token": "hvs.CAESINdpfliAvi6HsaqZnOCMAwWIoW1B4tvY4PfHcj6LVgBiGigKImh2cy5URFZ6bVBkWFJ3cDVTejNac2dQQ1Q1T3YuaEpNVUcQj90j",
+    "accessor": "bJl9qJIDeHXCvZbu3j3EJfW1.hJMUG",
+    "policies": [
+      "default",
+      "github-actions-oidc"
+    ],
+    "token_policies": [
+      "default",
+      "github-actions-oidc"
+    ],
+    "metadata": {
+      "role": "github-actions-role"
+    },
+    "lease_duration": 100,
+    "renewable": true,
+    "entity_id": "e80ad97a-d0c3-fcb7-a161-5ab46f6ee4dd",
+    "token_type": "service",
+    "orphan": true,
+    "mfa_requirement": null,
+    "num_uses": 0
+  }
+}
