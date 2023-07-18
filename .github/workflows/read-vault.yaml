@@ -32,7 +32,7 @@ jobs:
         env:
           VAULT_URL: ${{ secrets.VAULT_ADDR }}
           VAULT_AUTH_PATH: jwt
-          VAULT_ROLE: github-actions-role
+          VAULT_ROLE: github-actions-oidc
 
       - name: Retrieve Secrets
         id: secretdata
@@ -41,7 +41,7 @@ jobs:
           method: jwt
           url: ${{ secrets.VAULT_ADDR }}
           namespace: ${{ secrets.VAULT_NAMESPACE }}
-          role: github-actions-role
+          role: github-actions-oidc
 #          secrets: ${{ secrets.VAULT_SECRET_PATH }} ${{ secrets.VAULT_SECRET_KEY }} | MY_SECRET
           secrets: secrets/adp password | MY_SECRET
 
