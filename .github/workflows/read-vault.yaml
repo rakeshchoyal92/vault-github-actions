@@ -50,5 +50,5 @@ jobs:
 
       - name: Print Secrets
         run: |
-          echo '${{ MY_SECRET }}'
+          echo '${{ steps.outputs.MY_SECRET }}'
 #          echo '${{ steps.secretdata.outputs.MY_SECRET }}'
