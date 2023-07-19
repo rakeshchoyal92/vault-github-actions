@@ -44,7 +44,7 @@ jobs:
           method: jwt
           url: ${{ secrets.VAULT_ADDR }}
           namespace: ${{ secrets.VAULT_NAMESPACE }}
-          role: github-actions-role
+          role: auth/jwt/role/github-actions-role
 #          secrets: ${{ secrets.VAULT_SECRET_PATH }} ${{ secrets.VAULT_SECRET_KEY }} | MY_SECRET
 #          secrets: secrets/adp password | MY_SECRET
 
