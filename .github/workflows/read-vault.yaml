@@ -43,7 +43,7 @@ jobs:
         with:
           method: jwt
           url: ${{ vars.VAULT_ADDR }}
-          namespace: ${{ vars.VAULT_NAMESPACE }}
+          namespace: admin
           role: ${{ vars.VAULT_ROLE }}
           secrets: secrets/data/adp password | MY_PASSWORD
 
