@@ -33,18 +33,18 @@ jobs:
           # Remove the token file when we're done (if we don't fail)
           rm ./token.json
         env:
-          VAULT_URL: $VAULT_ADDR
+          VAULT_URL: ${{ env.VAULT_ADDR }}
           VAULT_AUTH_PATH: jwt
-          VAULT_ROLE: $VAULT_ROLE
+          VAULT_ROLE: ${{ env.VAULT_ROLE }}
 
       - name: Retrieve Secrets
         id: secretdata
         uses: hashicorp/vault-action@v2
         with:
           method: jwt
-          url: $VAULT_ADDR
-          namespace: $VAULT_NAMESPACE
-          role: $VAULT_ROLE
+          url: ${{ env.VAULT_ADDR }}
+          namespace: ${{ env.VAULT_NAMESPACE }}
+          role: ${{ env.VAULT_ROLE }}
           secrets: secrets/data/adp password | MY_PASSWORD
 
       - name: Print Secrets
