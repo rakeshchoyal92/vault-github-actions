@@ -41,7 +41,7 @@ jobs:
           url: ${{ vars.VAULT_ADDR }}
           namespace: ${{ vars.VAULT_NAMESPACE }}
           role: ${{ vars.VAULT_ROLE }}
-          secrets: secrets/data/adp password | MY_PASSWORD
+          secrets: secrets/data/dockerhub password | MY_PASSWORD
       # Print the secrets (not recommended)
       - name: Print Secrets
         run: |
