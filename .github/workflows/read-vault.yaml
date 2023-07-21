@@ -38,7 +38,6 @@ jobs:
         id: secretdata
         uses: hashicorp/vault-action@v2
         with:
-          exportEnv: true
           method: jwt
           url: ${{ vars.VAULT_ADDR }}
           namespace: ${{ vars.VAULT_NAMESPACE }}
