@@ -1,16 +1,14 @@
 {
-  "request_id": "dd47ef0a-6933-d2e8-4c87-e3abcf737a58",
+  "request_id": "a3325238-fde0-dd71-84c2-6bfdc7bb65d3",
   "lease_id": "",
   "renewable": false,
   "lease_duration": 0,
   "data": null,
   "wrap_info": null,
-  "warnings": [
-    "TTL of \"1h\" exceeded the effective max_ttl of \"1m40s\"; TTL value is capped accordingly"
-  ],
+  "warnings": null,
   "auth": {
-    "client_token": "hvs.CAESIF6_J71UniWydSKmxSBVTaOrnprnC414t3QlOX7GEA7PGigKImh2cy5vY1ZrRVRMaXFOU21TTVU0aUt1ZnZNOGguaEpNVUcQyqIk",
-    "accessor": "UZIR7SLwHlyQA79BV9WleS1l.hJMUG",
+    "client_token": "hvs.CAESIL2--ovlZ157D5CiYP8SC9G4w2uSJuMJmYHRdcdZCqgGGigKImh2cy5ZOFpwYzMyOWllZUFHekFjelFYR2pva0suaEpNVUcQ5_Ak",
+    "accessor": "yX6bel8DLuXPP4yoEcExry2f.hJMUG",
     "policies": [
       "default",
       "github-actions-oidc"
@@ -22,9 +20,9 @@
     "metadata": {
       "role": "github-actions-role"
     },
-    "lease_duration": 100,
+    "lease_duration": 3600,
     "renewable": true,
-    "entity_id": "2d5e3b84-94ed-2d0e-d377-e4f669c9f160",
+    "entity_id": "7a444b49-c751-10ca-8e52-aa9aa347275d",
     "token_type": "service",
     "orphan": true,
     "mfa_requirement": null,
