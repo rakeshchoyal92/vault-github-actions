@@ -13,12 +13,6 @@ jobs:
       # Checkout the repository to the GitHub Actions runner
       - name: Checkout
         uses: actions/checkout@v2
-      - name: perform token run
-        run: |
-          echo $(curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=rakeshchoyal92" | base64)
-      - name: print token
-        run: |
-          echo $(curl -sSL -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL")
       # Shout out to Benjamin Pannell at Sierra Softworks for this
       # https://sierrasoftworks.com/2021/12/20/vault-github-actions/#policies
       - name: Troubleshooting
@@ -44,6 +38,7 @@ jobs:
         id: secretdata
         uses: hashicorp/vault-action@v2
         with:
+          exportEnv: true
           method: jwt
           url: ${{ vars.VAULT_ADDR }}
           namespace: ${{ vars.VAULT_NAMESPACE }}
