@@ -21,7 +21,7 @@ jobs:
           jq "{ jwt: .value, role: \"$VAULT_ROLE\" }" > ./token.json
 
           echo 'Raw GitHub Actions Token'
-          cat ./token.json
+          cat ./token.json | jq -r '.jwt'
           
           
           echo 'GitHub Actions Token Claims'
