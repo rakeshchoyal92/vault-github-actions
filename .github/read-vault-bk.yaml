@@ -1,7 +1,6 @@
 name: OIDC Access Test
 
-on:
-  workflow_call
+on: push
 
 permissions:
   id-token: write

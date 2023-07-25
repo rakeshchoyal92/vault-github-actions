@@ -1,0 +1,54 @@
+# Workflow to run against dev, staging and prod environments. We print welcome message on each of the action run on the environment
+
+name: Manual Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'dev'
+        options:
+          - 'dev'
+          - 'staging'
+          - 'prod'
+
+jobs:
+  run_dev:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy to dev
+        run: |
+          echo "Welcome to dev"
+          echo "Deploying to dev"
+          echo "Deployed to dev"
+
+  run_staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    needs: run_dev
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy to staging
+        run: |
+          echo "Welcome to staging"
+          echo "Deploying to staging"
+          echo "Deployed to staging"
+
+  run_prod:
+    runs-on: ubuntu-latest
+    environment: prod
+    needs: run_staging
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy to prod
+        run: |
+          echo "Welcome to prod"
+          echo "Deploying to prod"
+          echo "Deployed to prod"
