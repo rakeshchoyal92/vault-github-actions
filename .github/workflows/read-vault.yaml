@@ -1,7 +1,6 @@
 name: OIDC Access Test
 
-on:
-  workflow_call
+on: push
 
 permissions:
   id-token: write
@@ -20,7 +19,7 @@ jobs:
         run: |
           curl -sSL -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL" | \
           jq "{ jwt: .value, role: \"$VAULT_ROLE\" }" > ./token.json          
-
+          
           
           echo 'GitHub Actions Token Claims'
           cat ./token.json | jq -r '.jwt | split(".") | .[1] | @base64d' | jq
@@ -44,7 +43,7 @@ jobs:
           url: ${{ vars.VAULT_ADDR }}
 #          namespace: ${{ vars.VAULT_NAMESPACE }}
           role: ${{ vars.VAULT_ROLE }}
-          secrets: test-github/data/docker password | MY_PASSWORD
+          secrets: test-github/data/docker username | MY_PASSWORD
       # Print the secrets (not recommended)
       - name: Print Secrets
         run: |
