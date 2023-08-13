@@ -41,7 +41,7 @@ jobs:
         with:
           method: jwt
           url: ${{ vars.VAULT_ADDR }}
-#          namespace: ${{ vars.VAULT_NAMESPACE }}
+          namespace: ""
           role: ${{ vars.VAULT_ROLE }}
           secrets: test-github/data/docker username | MY_PASSWORD
       # Print the secrets (not recommended)
