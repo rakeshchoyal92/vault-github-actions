@@ -37,7 +37,7 @@ jobs:
       # Retrieve the secrets from Vault
       - name: Retrieve Secrets
         id: secretdata
-        uses: hashicorp/vault-action@v2
+        uses: hashicorp/vault-action@v2.7.3
         with:
           method: jwt
           url: ${{ vars.VAULT_ADDR }}
